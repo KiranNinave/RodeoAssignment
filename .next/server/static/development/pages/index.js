@@ -93,6 +93,102 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./apis/functions/requests.js":
+/*!************************************!*\
+  !*** ./apis/functions/requests.js ***!
+  \************************************/
+/*! exports provided: httpMethods, sendJsonRequest */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "httpMethods", function() { return httpMethods; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sendJsonRequest", function() { return sendJsonRequest; });
+const httpMethods = {
+  GET: "GET",
+  POST: "POST",
+  PUT: "PUT",
+  DELETE: "DELETE",
+  PATCH: "PATCH"
+};
+const sendJsonRequest = async (url = "", method = httpMethods.GET) => {
+  const header = {
+    method: method,
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiM2VjYzFlMzAwNmRiZjMyNjEyNzk2NDQ0OTFiZTc2NiIsInN1YiI6IjVkY2QyYzA1Y2MyNzdjMDAxNGUyYzdmYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.JGOmr3g3fU0eEUXIWD5sI5l-KhMecoon6tdCliwOdPQ"
+    }
+  };
+  return await fetch(url, header);
+};
+
+/***/ }),
+
+/***/ "./apis/functions/responses.js":
+/*!*************************************!*\
+  !*** ./apis/functions/responses.js ***!
+  \*************************************/
+/*! exports provided: sendResponse */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sendResponse", function() { return sendResponse; });
+const sendResponse = async (response = {}) => {
+  if (response.status === 401) throw new Error("Invalid credentials please relogin");
+  if (response.status === 404) throw new Error("404 Item not found");
+  const json = await response.json();
+  if (true) console.log(json);
+  if (response.status === 400) throw new Error(json.status_message || "Bad request");
+  if (response.status === 409) throw new Error(json.status_message || "data conflict");
+  if (response.status === 200 || response.status === 201) return json;
+  throw new Error("Cant reach to server");
+};
+
+/***/ }),
+
+/***/ "./apis/movieApis.js":
+/*!***************************!*\
+  !*** ./apis/movieApis.js ***!
+  \***************************/
+/*! exports provided: getSearchMoviesApi, getPopularMoviesApi */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSearchMoviesApi", function() { return getSearchMoviesApi; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPopularMoviesApi", function() { return getPopularMoviesApi; });
+/* harmony import */ var _functions_requests__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions/requests */ "./apis/functions/requests.js");
+/* harmony import */ var _functions_responses__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./functions/responses */ "./apis/functions/responses.js");
+
+
+const getSearchMoviesApi = async (data = {
+  query: "marvel",
+  page: 1
+}) => {
+  try {
+    const url = `https://api.themoviedb.org/3/search/movie?query=${data.query}&api_key=b3ecc1e3006dbf3261279644491be766&language=en-US&page=${data.page}`;
+    const response = await Object(_functions_requests__WEBPACK_IMPORTED_MODULE_0__["sendJsonRequest"])(url, _functions_requests__WEBPACK_IMPORTED_MODULE_0__["httpMethods"].GET);
+    return await Object(_functions_responses__WEBPACK_IMPORTED_MODULE_1__["sendResponse"])(response);
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+const getPopularMoviesApi = async (data = {
+  page: 1
+}) => {
+  try {
+    const url = `https://api.themoviedb.org/3/movie/popular?api_key=b3ecc1e3006dbf3261279644491be766&language=en-US&page=${data.page}`;
+    const response = await Object(_functions_requests__WEBPACK_IMPORTED_MODULE_0__["sendJsonRequest"])(url, _functions_requests__WEBPACK_IMPORTED_MODULE_0__["httpMethods"].GET);
+    return await Object(_functions_responses__WEBPACK_IMPORTED_MODULE_1__["sendResponse"])(response);
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/map.js":
 /*!************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/map.js ***!
@@ -178,6 +274,36 @@ module.exports = __webpack_require__(/*! core-js/library/fn/promise */ "core-js/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/weak-map */ "core-js/library/fn/weak-map");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
 
 /***/ }),
 
@@ -1847,43 +1973,148 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _apis_movieApis__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../apis/movieApis */ "./apis/movieApis.js");
+/* harmony import */ var react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-infinite-scroll-component */ "react-infinite-scroll-component");
+/* harmony import */ var react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_4__);
+
 var _jsxFileName = "/home/kiran/Desktop/next/RodeoAssignment/pages/index.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
-class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+
+
+class Index extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
+  constructor(props) {
+    super(props);
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "fetchMovies", async () => {
+      try {
+        this.setState({
+          loading: true
+        });
+        const {
+          page
+        } = this.state;
+        const response = await Object(_apis_movieApis__WEBPACK_IMPORTED_MODULE_3__["getPopularMoviesApi"])({
+          page
+        });
+        this.setState({
+          movies: [...this.state.movies, ...response.results],
+          hasMore: page <= response.total_pages
+        });
+      } catch (err) {
+        console.log(err);
+      } finally {
+        if (this.isComponentMounted) this.setState({
+          loading: false
+        });
+      }
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "loadMore", async () => {
+      if (this.isComponentMounted) {
+        this.setState(prevState => ({
+          page: prevState.page + 1
+        }), async () => await this.fetchMovies());
+      }
+    });
+
+    this.state = {
+      hasMore: true,
+      loading: false,
+      page: 1,
+      movies: []
+    };
+    this.isComponentMounted = true;
+  }
+
+  async componentDidMount() {
+    await this.fetchMovies();
+  }
+
+  componentWillUnmount() {
+    this.isComponentMounted = false;
+  }
+
   render() {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 7
+        lineNumber: 55
       },
       __self: this
-    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      href: "/movie?id=1",
+    }, __jsx("h2", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 8
+        lineNumber: 56
+      },
+      __self: this
+    }, "home"), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      href: "/search",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 57
       },
       __self: this
     }, __jsx("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 9
+        lineNumber: 58
       },
       __self: this
-    }, "movie")), __jsx("h1", {
+    }, "search")), __jsx(react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      dataLength: this.state.movies.length //This is important field to render the next data
+      ,
+      next: this.loadMore,
+      hasMore: this.state.hasMore,
+      loader: __jsx("h4", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 64
+        },
+        __self: this
+      }, "Loading..."),
+      endMessage: __jsx("p", {
+        style: {
+          textAlign: "center"
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66
+        },
+        __self: this
+      }, __jsx("b", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67
+        },
+        __self: this
+      }, "Yay! You have seen it all")),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 11
+        lineNumber: 60
       },
       __self: this
-    }, "hello world"));
+    }, this.state.movies.map((movie, index) => __jsx("div", {
+      key: movie.id.toString() + index,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 72
+      },
+      __self: this
+    }, __jsx("h3", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 73
+      },
+      __self: this
+    }, movie.title)))));
   }
 
 }
@@ -2022,6 +2253,17 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-infinite-scroll-component":
+/*!**************************************************!*\
+  !*** external "react-infinite-scroll-component" ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-infinite-scroll-component");
 
 /***/ }),
 
