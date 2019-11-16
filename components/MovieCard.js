@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import Link from "next/link";
 import { Card, Icon } from "antd";
 import StarRating from "react-star-ratings";
 const { Meta } = Card;
+
+// css
+import "../styles/MovieCard.css";
 
 export default class MovieCard extends Component {
   constructor(props) {
@@ -20,25 +22,25 @@ export default class MovieCard extends Component {
     } = this.props.movie;
     return (
       <Card
-        style={{ marginTop: 20, marginBottom: 20, maxWidth: 300 }}
+        className="movie-card"
         cover={
           <img
             alt="example"
             src={`https://image.tmdb.org/t/p/w500${backdrop_path}`}
-            style={{ width: 300, height: "auto" }}
+            className="movie-card-image"
           ></img>
         }
       >
         <div>
-          <Meta style={{ fontWeight: "bold" }} title={original_title} />
+          <Meta className="movie-card-title" title={original_title} />
           <div style={{ lineHeight: 2, marginTop: 10 }}>
-            <div style={{ fontSize: 12 }}>
+            <div className="movie-card-content-text">
               <b>Date of Release:</b> {release_date}
             </div>
-            <div style={{ fontSize: 12 }}>
+            <div className="movie-card-content-text">
               <b>Language:</b> {original_language}
             </div>
-            <div style={{ fontSize: 12 }}>
+            <div className="movie-card-content-text">
               <b>Total reviews:</b> {vote_count}
             </div>
           </div>

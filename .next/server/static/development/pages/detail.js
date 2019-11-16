@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -221,12 +221,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _styles_Header_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/Header.css */ "./styles/Header.css");
+/* harmony import */ var _styles_Header_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_Header_css__WEBPACK_IMPORTED_MODULE_5__);
 
 var _jsxFileName = "/home/kiran/Desktop/next/RodeoAssignment/layouts/Header.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+
+ // css
 
 
 class NavBar extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
@@ -259,37 +263,44 @@ class NavBar extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       variant: "dark",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 29
       },
       __self: this
     }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 30
       },
       __self: this
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
       href: "/",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 31
       },
       __self: this
     }, __jsx("div", {
       style: {
         cursor: "pointer"
       },
-      className: "navbar-brand",
+      className: "navbar-brand visible",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 32
       },
       __self: this
     }, "Movies Now")), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"], {
       className: "mr-auto",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33
+        lineNumber: 36
+      },
+      __self: this
+    }), __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3___default.a.Toggle, {
+      "aria-controls": "responsive-navbar-nav",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37
       },
       __self: this
     }), search && __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"], {
@@ -297,19 +308,19 @@ class NavBar extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       onSubmit: this.onSubmit,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 40
       },
       __self: this
     }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["FormControl"], {
       name: "search",
       type: "text",
       placeholder: "Search",
-      className: "mr-sm-2",
+      className: "mr-sm-2 search-bar",
       value: this.state.search,
       onChange: this.handleTextChange,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 41
       },
       __self: this
     }), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -317,7 +328,7 @@ class NavBar extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       variant: "outline-light",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 49
       },
       __self: this
     }, "Search")), !search && __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -325,7 +336,7 @@ class NavBar extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       href: "/search",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 56
       },
       __self: this
     }, __jsx("div", {
@@ -335,7 +346,7 @@ class NavBar extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       className: "btn btn-outline-light",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 57
       },
       __self: this
     }, "search"))));
@@ -2417,7 +2428,18 @@ class Detail extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
 
 /***/ }),
 
-/***/ 3:
+/***/ "./styles/Header.css":
+/*!***************************!*\
+  !*** ./styles/Header.css ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ 5:
 /*!*******************************!*\
   !*** multi ./pages/detail.js ***!
   \*******************************/

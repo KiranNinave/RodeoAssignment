@@ -24476,5 +24476,47 @@ div.ant-typography-edit-content {
 
 
 /*# sourceMappingURL=antd.css.map*/
+.base-container {
+  margin-top: 70px;
+}
+
+.visible {
+  display: block;
+}
+
+@media only screen and (max-width: 500px) {
+  .visible {
+    display: none;
+  }
+
+  .search-bar {
+    width: 200px;
+  }
+}
+
+.movie-card {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-width: 300px;
+}
+
+.movie-card-image {
+  width: 300px;
+  height: auto;
+}
+
+.movie-card-title {
+  font-weight: bold;
+}
+
+.movie-card-content {
+  line-height: 2px;
+  margin-top: 10px;
+}
+
+.movie-card-content-text {
+  font-size: 12px;
+}
+
 
 /*# sourceMappingURL=styles.chunk.css.map*/

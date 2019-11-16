@@ -214,21 +214,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MovieCard; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd */ "antd");
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_star_ratings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-star-ratings */ "react-star-ratings");
-/* harmony import */ var react_star_ratings__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_star_ratings__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd */ "antd");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_star_ratings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-star-ratings */ "react-star-ratings");
+/* harmony import */ var react_star_ratings__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_star_ratings__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _styles_MovieCard_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/MovieCard.css */ "./styles/MovieCard.css");
+/* harmony import */ var _styles_MovieCard_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_MovieCard_css__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/home/kiran/Desktop/next/RodeoAssignment/components/MovieCard.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
 const {
   Meta
-} = antd__WEBPACK_IMPORTED_MODULE_2__["Card"];
+} = antd__WEBPACK_IMPORTED_MODULE_1__["Card"]; // css
+
+
 class MovieCard extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(props) {
     super(props);
@@ -244,44 +245,35 @@ class MovieCard extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       vote_count,
       original_title
     } = this.props.movie;
-    return __jsx(antd__WEBPACK_IMPORTED_MODULE_2__["Card"], {
-      style: {
-        marginTop: 20,
-        marginBottom: 20,
-        maxWidth: 300
-      },
+    return __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"], {
+      className: "movie-card",
       cover: __jsx("img", {
         alt: "example",
         src: `https://image.tmdb.org/t/p/w500${backdrop_path}`,
-        style: {
-          width: 300,
-          height: "auto"
-        },
+        className: "movie-card-image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 27
         },
         __self: this
       }),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 24
       },
       __self: this
     }, __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 34
       },
       __self: this
     }, __jsx(Meta, {
-      style: {
-        fontWeight: "bold"
-      },
+      className: "movie-card-title",
       title: original_title,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33
+        lineNumber: 35
       },
       __self: this
     }), __jsx("div", {
@@ -291,55 +283,49 @@ class MovieCard extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
-      },
-      __self: this
-    }, __jsx("div", {
-      style: {
-        fontSize: 12
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 35
-      },
-      __self: this
-    }, __jsx("b", {
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 36
       },
       __self: this
-    }, "Date of Release:"), " ", release_date), __jsx("div", {
-      style: {
-        fontSize: 12
+    }, __jsx("div", {
+      className: "movie-card-content-text",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37
       },
+      __self: this
+    }, __jsx("b", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 38
       },
       __self: this
-    }, __jsx("b", {
+    }, "Date of Release:"), " ", release_date), __jsx("div", {
+      className: "movie-card-content-text",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 40
       },
       __self: this
-    }, "Language:"), " ", original_language), __jsx("div", {
-      style: {
-        fontSize: 12
-      },
+    }, __jsx("b", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 41
       },
       __self: this
+    }, "Language:"), " ", original_language), __jsx("div", {
+      className: "movie-card-content-text",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 43
+      },
+      __self: this
     }, __jsx("b", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 44
       },
       __self: this
-    }, "Total reviews:"), " ", vote_count)), __jsx(react_star_ratings__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    }, "Total reviews:"), " ", vote_count)), __jsx(react_star_ratings__WEBPACK_IMPORTED_MODULE_2___default.a, {
       rating: vote_average,
       starRatedColor: "#F5E400",
       starDimension: "15px",
@@ -347,7 +333,7 @@ class MovieCard extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       numberOfStars: 10,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 47
       },
       __self: this
     })));
@@ -376,12 +362,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _styles_Header_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/Header.css */ "./styles/Header.css");
+/* harmony import */ var _styles_Header_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_Header_css__WEBPACK_IMPORTED_MODULE_5__);
 
 var _jsxFileName = "/home/kiran/Desktop/next/RodeoAssignment/layouts/Header.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+
+ // css
 
 
 class NavBar extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
@@ -414,37 +404,44 @@ class NavBar extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       variant: "dark",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 29
       },
       __self: this
     }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 30
       },
       __self: this
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
       href: "/",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 31
       },
       __self: this
     }, __jsx("div", {
       style: {
         cursor: "pointer"
       },
-      className: "navbar-brand",
+      className: "navbar-brand visible",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 32
       },
       __self: this
     }, "Movies Now")), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"], {
       className: "mr-auto",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33
+        lineNumber: 36
+      },
+      __self: this
+    }), __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3___default.a.Toggle, {
+      "aria-controls": "responsive-navbar-nav",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37
       },
       __self: this
     }), search && __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"], {
@@ -452,19 +449,19 @@ class NavBar extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       onSubmit: this.onSubmit,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 40
       },
       __self: this
     }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["FormControl"], {
       name: "search",
       type: "text",
       placeholder: "Search",
-      className: "mr-sm-2",
+      className: "mr-sm-2 search-bar",
       value: this.state.search,
       onChange: this.handleTextChange,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 41
       },
       __self: this
     }), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -472,7 +469,7 @@ class NavBar extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       variant: "outline-light",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 49
       },
       __self: this
     }, "Search")), !search && __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -480,7 +477,7 @@ class NavBar extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       href: "/search",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 56
       },
       __self: this
     }, __jsx("div", {
@@ -490,7 +487,7 @@ class NavBar extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       className: "btn btn-outline-light",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 57
       },
       __self: this
     }, "search"))));
@@ -2318,10 +2315,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var antd_dist_antd_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! antd/dist/antd.css */ "./node_modules/antd/dist/antd.css");
 /* harmony import */ var antd_dist_antd_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(antd_dist_antd_css__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _layouts_Header__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../layouts/Header */ "./layouts/Header.js");
-/* harmony import */ var _components_MovieCard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/MovieCard */ "./components/MovieCard.js");
+/* harmony import */ var _styles_Base_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../styles/Base.css */ "./styles/Base.css");
+/* harmony import */ var _styles_Base_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_styles_Base_css__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _layouts_Header__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../layouts/Header */ "./layouts/Header.js");
+/* harmony import */ var _components_MovieCard__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/MovieCard */ "./components/MovieCard.js");
 
 var _jsxFileName = "/home/kiran/Desktop/next/RodeoAssignment/pages/search.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
@@ -2329,6 +2328,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
  // style
+
 
 
  // style compoents
@@ -2413,29 +2413,31 @@ class Search extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
     if (this.state.loading) {
       return __jsx("div", {
         style: {
-          flex: 1,
+          display: "flex",
+          height: "100%",
+          width: "100%",
           justifyContent: "center",
           alignItems: "center",
           marginTop: 100
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 84
         },
         __self: this
-      }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Spinner"], {
+      }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["Spinner"], {
         animation: "border",
         role: "status",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 94
         },
         __self: this
       }, __jsx("span", {
         className: "sr-only",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92
+          lineNumber: 95
         },
         __self: this
       }, "Loading...")));
@@ -2444,24 +2446,22 @@ class Search extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 98
+        lineNumber: 101
       },
       __self: this
-    }, __jsx(_layouts_Header__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    }, __jsx(_layouts_Header__WEBPACK_IMPORTED_MODULE_9__["default"], {
       onSubmit: this.onSubmit,
       search: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
+        lineNumber: 102
       },
       __self: this
-    }), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Container"], {
-      style: {
-        marginTop: 70
-      },
+    }), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["Container"], {
+      className: "base-container",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 100
+        lineNumber: 103
       },
       __self: this
     }, __jsx(react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -2472,7 +2472,7 @@ class Search extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       loader: this.state.movies.length > 0 ? __jsx("h4", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 107
+          lineNumber: 110
         },
         __self: this
       }, "Loading...") : __jsx("div", {
@@ -2481,13 +2481,13 @@ class Search extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 109
+          lineNumber: 112
         },
         __self: this
       }, __jsx("h4", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 110
+          lineNumber: 113
         },
         __self: this
       }, "Search what you like to watch!")),
@@ -2497,58 +2497,58 @@ class Search extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 115
+          lineNumber: 118
         },
         __self: this
       }, __jsx("b", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116
+          lineNumber: 119
         },
         __self: this
       }, "Yay! You have seen it all")),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 101
+        lineNumber: 104
       },
       __self: this
-    }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Row"], {
+    }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["Row"], {
       style: {
         justifyContent: "center"
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 120
+        lineNumber: 123
       },
       __self: this
     }, this.state.movies.map((movie, index) => __jsx("div", {
       key: movie.id.toString() + index,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 122
+        lineNumber: 125
       },
       __self: this
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
       href: `/detail?id=${movie.id}`,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 123
+        lineNumber: 126
       },
       __self: this
-    }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__["Col"], {
+    }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["Col"], {
       style: {
         cursor: "pointer"
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 124
+        lineNumber: 127
       },
       __self: this
-    }, __jsx(_components_MovieCard__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    }, __jsx(_components_MovieCard__WEBPACK_IMPORTED_MODULE_10__["default"], {
       movie: movie,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 125
+        lineNumber: 128
       },
       __self: this
     })))))))));
@@ -2557,6 +2557,39 @@ class Search extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Search);
+
+/***/ }),
+
+/***/ "./styles/Base.css":
+/*!*************************!*\
+  !*** ./styles/Base.css ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./styles/Header.css":
+/*!***************************!*\
+  !*** ./styles/Header.css ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./styles/MovieCard.css":
+/*!******************************!*\
+  !*** ./styles/MovieCard.css ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 

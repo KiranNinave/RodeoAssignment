@@ -1,0 +1,23 @@
+.movie-card {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-width: 300px;
+}
+
+.movie-card-image {
+  width: 300px;
+  height: auto;
+}
+
+.movie-card-title {
+  font-weight: bold;
+}
+
+.movie-card-content {
+  line-height: 2px;
+  margin-top: 10px;
+}
+
+.movie-card-content-text {
+  font-size: 12px;
+}

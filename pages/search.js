@@ -6,6 +6,7 @@ import Link from "next/link";
 // style
 import "bootstrap/dist/css/bootstrap.min.css";
 import "antd/dist/antd.css";
+import "../styles/Base.css";
 
 // style compoents
 import { Container, Row, Col, Spinner } from "react-bootstrap";
@@ -82,7 +83,9 @@ class Search extends React.Component {
       return (
         <div
           style={{
-            flex: 1,
+            display: "flex",
+            height: "100%",
+            width: "100%",
             justifyContent: "center",
             alignItems: "center",
             marginTop: 100
@@ -97,7 +100,7 @@ class Search extends React.Component {
     return (
       <div>
         <Header onSubmit={this.onSubmit} search={true} />
-        <Container style={{ marginTop: 70 }}>
+        <Container className="base-container">
           <InfiniteScroll
             dataLength={this.state.movies.length} //This is important field to render the next data
             next={this.loadMore}

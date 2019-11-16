@@ -6,6 +6,7 @@ import Link from "next/link";
 // style
 import "bootstrap/dist/css/bootstrap.min.css";
 import "antd/dist/antd.css";
+import "../styles/Base.css";
 
 // style compoents
 import { Container, Row, Col } from "react-bootstrap";
@@ -67,7 +68,7 @@ class Index extends React.Component {
     return (
       <div>
         <Header></Header>
-        <Container style={{ marginTop: 70 }}>
+        <Container className="base-container">
           <InfiniteScroll
             dataLength={this.state.movies.length} //This is important field to render the next data
             next={this.loadMore}
