@@ -2,6 +2,19 @@ import React from "react";
 import { getSearchMoviesApi } from "../apis/movieApis";
 import InfiniteScroll from "react-infinite-scroll-component";
 
+// style
+import "bootstrap/dist/css/bootstrap.min.css";
+import "antd/dist/antd.css";
+
+// style compoents
+import { Container, Row, Col, Spinner } from "react-bootstrap";
+
+// layout
+import Header from "../layouts/Header";
+
+// components
+import MovieCard from "../components/MovieCard";
+
 class Search extends React.Component {
   constructor(props) {
     super(props);
@@ -23,22 +36,26 @@ class Search extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  onSubmit = async e => {
-    e.preventDefault();
-    if (this.query != "") {
-      await this.searchMovie();
+  onSubmit = async data => {
+    if (data != "") {
+      this.setState({ query: data }, async () => {
+        await this.searchMovie(true);
+      });
     } else {
       console.log("please enter something");
     }
   };
 
-  searchMovie = async () => {
+  searchMovie = async (isNew = false) => {
     try {
-      this.setState({ loading: true });
+      if (this.isNew) this.setState({ loading: true });
+
       const { query, page } = this.state;
       const response = await getSearchMoviesApi({ query, page });
       this.setState({
-        movies: [...this.state.movies, ...response.results],
+        movies: isNew
+          ? [...response.results]
+          : [...this.state.movies, ...response.results],
         hasMore: page <= response.total_pages
       });
     } catch (err) {
@@ -60,37 +77,51 @@ class Search extends React.Component {
   };
 
   render() {
+    if (this.state.loading) {
+      return (
+        <div
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        >
+          <Spinner animation="border" role="status">
+            <span className="sr-only">Loading...</span>
+          </Spinner>
+        </div>
+      );
+    }
     return (
       <div>
-        <h3>search what you like to watch</h3>
-        <form onSubmit={this.onSubmit}>
-          <input
-            type="text"
-            name="query"
-            placeholder="search"
-            value={this.state.query}
-            onChange={this.handleChange}
-          />
-          <button type="submit">search</button>
-        </form>
-
-        <InfiniteScroll
-          dataLength={this.state.movies.length} //This is important field to render the next data
-          next={this.loadMore}
-          hasMore={this.state.hasMore}
-          loader={<h4>Loading...</h4>}
-          endMessage={
-            <p style={{ textAlign: "center" }}>
-              <b>Yay! You have seen it all</b>
-            </p>
-          }
-        >
-          {this.state.movies.map((movie, index) => (
-            <div key={movie.id.toString() + index}>
-              <h3>{movie.title}</h3>
-            </div>
-          ))}
-        </InfiniteScroll>
+        <Header onSubmit={this.onSubmit} search={true} />
+        <Container style={{ marginTop: 70 }}>
+          <InfiniteScroll
+            dataLength={this.state.movies.length} //This is important field to render the next data
+            next={this.loadMore}
+            hasMore={this.state.hasMore}
+            loader={
+              this.state.movies.length > 0 ? (
+                <h4>Loading...</h4>
+              ) : (
+                <div style={{ marginTop: 50 }}>
+                  <h4>Search what you like to watch!</h4>
+                </div>
+              )
+            }
+            endMessage={
+              <p style={{ textAlign: "center" }}>
+                <b>Yay! You have seen it all</b>
+              </p>
+            }
+          >
+            <Row style={{ justifyContent: "center" }}>
+              {this.state.movies.map((movie, index) => (
+                <div key={movie.id.toString() + index}>
+                  <Col>
+                    <MovieCard movie={movie} />
+                  </Col>
+                </div>
+              ))}
+            </Row>
+          </InfiniteScroll>
+        </Container>
       </div>
     );
   }

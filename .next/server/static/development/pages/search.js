@@ -189,6 +189,279 @@ const getPopularMoviesApi = async (data = {
 
 /***/ }),
 
+/***/ "./components/MovieCard.js":
+/*!*********************************!*\
+  !*** ./components/MovieCard.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MovieCard; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd */ "antd");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_star_ratings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-star-ratings */ "react-star-ratings");
+/* harmony import */ var react_star_ratings__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_star_ratings__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/home/kiran/Desktop/next/RodeoAssignment/components/MovieCard.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const {
+  Meta
+} = antd__WEBPACK_IMPORTED_MODULE_1__["Card"];
+class MovieCard extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const {
+      backdrop_path,
+      title,
+      release_date,
+      vote_average,
+      original_language,
+      vote_count,
+      original_title
+    } = this.props.movie;
+    return __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"], {
+      style: {
+        marginTop: 20,
+        marginBottom: 20,
+        maxWidth: 300
+      },
+      cover: __jsx("img", {
+        alt: "example",
+        src: `https://image.tmdb.org/t/p/w500${backdrop_path}`,
+        style: {
+          width: 300,
+          height: "auto"
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24
+        },
+        __self: this
+      }),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: this
+    }, __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31
+      },
+      __self: this
+    }, __jsx(Meta, {
+      style: {
+        fontWeight: "bold"
+      },
+      title: original_title,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 32
+      },
+      __self: this
+    }), __jsx("div", {
+      style: {
+        lineHeight: 2,
+        marginTop: 10
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 33
+      },
+      __self: this
+    }, __jsx("div", {
+      style: {
+        fontSize: 12
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 34
+      },
+      __self: this
+    }, __jsx("b", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35
+      },
+      __self: this
+    }, "Date of Release:"), " ", release_date), __jsx("div", {
+      style: {
+        fontSize: 12
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37
+      },
+      __self: this
+    }, __jsx("b", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 38
+      },
+      __self: this
+    }, "Language:"), " ", original_language), __jsx("div", {
+      style: {
+        fontSize: 12
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40
+      },
+      __self: this
+    }, __jsx("b", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 41
+      },
+      __self: this
+    }, "Total reviews:"), " ", vote_count)), __jsx(react_star_ratings__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      rating: vote_average,
+      starRatedColor: "#F5E400",
+      starDimension: "15px",
+      starSpacing: "0.5px",
+      numberOfStars: 10,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 44
+      },
+      __self: this
+    })));
+  }
+
+}
+
+/***/ }),
+
+/***/ "./layouts/Header.js":
+/*!***************************!*\
+  !*** ./layouts/Header.js ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return NavBar; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/Navbar */ "react-bootstrap/Navbar");
+/* harmony import */ var react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3__);
+
+var _jsxFileName = "/home/kiran/Desktop/next/RodeoAssignment/layouts/Header.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+
+class NavBar extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
+  constructor(props) {
+    super(props);
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "onSubmit", async e => {
+      e.preventDefault();
+      await this.props.onSubmit(this.state.search);
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "handleTextChange", event => {
+      this.setState({
+        [event.target.name]: event.target.value
+      });
+    });
+
+    this.state = {
+      search: ""
+    };
+  }
+
+  render() {
+    const {
+      search
+    } = this.props;
+    return __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      fixed: "top",
+      bg: "dark",
+      variant: "dark",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25
+      },
+      __self: this
+    }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      },
+      __self: this
+    }, __jsx(react_bootstrap_Navbar__WEBPACK_IMPORTED_MODULE_3___default.a.Brand, {
+      href: "/",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: this
+    }, "Movies Now"), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"], {
+      className: "mr-auto",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28
+      },
+      __self: this
+    }), search && __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"], {
+      inline: true,
+      onSubmit: this.onSubmit,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: this
+    }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["FormControl"], {
+      name: "search",
+      type: "text",
+      placeholder: "Search",
+      className: "mr-sm-2",
+      value: this.state.search,
+      onChange: this.handleTextChange,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31
+      },
+      __self: this
+    }), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+      type: "submit",
+      variant: "outline-light",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 39
+      },
+      __self: this
+    }, "Search")), !search && __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"].Link, {
+      className: "btn btn-outline-light",
+      inline: true,
+      href: "/search",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 45
+      },
+      __self: this
+    }, "search")));
+  }
+
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js":
 /*!*******************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js ***!
@@ -230,6 +503,28 @@ function _defineProperty(obj, key, value) {
 
 /***/ }),
 
+/***/ "./node_modules/antd/dist/antd.css":
+/*!*****************************************!*\
+  !*** ./node_modules/antd/dist/antd.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./node_modules/bootstrap/dist/css/bootstrap.min.css":
+/*!***********************************************************!*\
+  !*** ./node_modules/bootstrap/dist/css/bootstrap.min.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
 /***/ "./pages/search.js":
 /*!*************************!*\
   !*** ./pages/search.js ***!
@@ -245,10 +540,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _apis_movieApis__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../apis/movieApis */ "./apis/movieApis.js");
 /* harmony import */ var react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-infinite-scroll-component */ "react-infinite-scroll-component");
 /* harmony import */ var react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var antd_dist_antd_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! antd/dist/antd.css */ "./node_modules/antd/dist/antd.css");
+/* harmony import */ var antd_dist_antd_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(antd_dist_antd_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _layouts_Header__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../layouts/Header */ "./layouts/Header.js");
+/* harmony import */ var _components_MovieCard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/MovieCard */ "./components/MovieCard.js");
 
 var _jsxFileName = "/home/kiran/Desktop/next/RodeoAssignment/pages/search.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
+
+ // style
+
+
+ // style compoents
+
+ // layout
+
+ // components
 
 
 
@@ -262,19 +574,21 @@ class Search extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "onSubmit", async e => {
-      e.preventDefault();
-
-      if (this.query != "") {
-        await this.searchMovie();
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "onSubmit", async data => {
+      if (data != "") {
+        this.setState({
+          query: data
+        }, async () => {
+          await this.searchMovie(true);
+        });
       } else {
         console.log("please enter something");
       }
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "searchMovie", async () => {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "searchMovie", async (isNew = false) => {
       try {
-        this.setState({
+        if (this.isNew) this.setState({
           loading: true
         });
         const {
@@ -286,7 +600,7 @@ class Search extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
           page
         });
         this.setState({
-          movies: [...this.state.movies, ...response.results],
+          movies: isNew ? [...response.results] : [...this.state.movies, ...response.results],
           hasMore: page <= response.total_pages
         });
       } catch (err) {
@@ -321,90 +635,137 @@ class Search extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
   }
 
   render() {
+    if (this.state.loading) {
+      return __jsx("div", {
+        style: {
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center"
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 82
+        },
+        __self: this
+      }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Spinner"], {
+        animation: "border",
+        role: "status",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 85
+        },
+        __self: this
+      }, __jsx("span", {
+        className: "sr-only",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 86
+        },
+        __self: this
+      }, "Loading...")));
+    }
+
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64
+        lineNumber: 92
       },
       __self: this
-    }, __jsx("h3", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 65
-      },
-      __self: this
-    }, "search what you like to watch"), __jsx("form", {
+    }, __jsx(_layouts_Header__WEBPACK_IMPORTED_MODULE_7__["default"], {
       onSubmit: this.onSubmit,
+      search: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
+        lineNumber: 93
       },
       __self: this
-    }, __jsx("input", {
-      type: "text",
-      name: "query",
-      placeholder: "search",
-      value: this.state.query,
-      onChange: this.handleChange,
+    }), __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Container"], {
+      style: {
+        marginTop: 70
+      },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 94
       },
       __self: this
-    }), __jsx("button", {
-      type: "submit",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 74
-      },
-      __self: this
-    }, "search")), __jsx(react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    }, __jsx(react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_3___default.a, {
       dataLength: this.state.movies.length //This is important field to render the next data
       ,
       next: this.loadMore,
       hasMore: this.state.hasMore,
-      loader: __jsx("h4", {
+      loader: this.state.movies.length > 0 ? __jsx("h4", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 101
         },
         __self: this
-      }, "Loading..."),
+      }, "Loading...") : __jsx("div", {
+        style: {
+          marginTop: 50
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 103
+        },
+        __self: this
+      }, __jsx("h4", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 104
+        },
+        __self: this
+      }, "Search what you like to watch!")),
       endMessage: __jsx("p", {
         style: {
           textAlign: "center"
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 109
         },
         __self: this
       }, __jsx("b", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 110
         },
         __self: this
       }, "Yay! You have seen it all")),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
+        lineNumber: 95
+      },
+      __self: this
+    }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Row"], {
+      style: {
+        justifyContent: "center"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 114
       },
       __self: this
     }, this.state.movies.map((movie, index) => __jsx("div", {
       key: movie.id.toString() + index,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89
+        lineNumber: 116
       },
       __self: this
-    }, __jsx("h3", {
+    }, __jsx(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Col"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90
+        lineNumber: 117
       },
       __self: this
-    }, movie.title)))));
+    }, __jsx(_components_MovieCard__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      movie: movie,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 118
+      },
+      __self: this
+    }))))))));
   }
 
 }
@@ -422,6 +783,17 @@ class Search extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
 
 module.exports = __webpack_require__(/*! /home/kiran/Desktop/next/RodeoAssignment/pages/search.js */"./pages/search.js");
 
+
+/***/ }),
+
+/***/ "antd":
+/*!***********************!*\
+  !*** external "antd" ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("antd");
 
 /***/ }),
 
@@ -447,6 +819,28 @@ module.exports = require("react");
 
 /***/ }),
 
+/***/ "react-bootstrap":
+/*!**********************************!*\
+  !*** external "react-bootstrap" ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-bootstrap");
+
+/***/ }),
+
+/***/ "react-bootstrap/Navbar":
+/*!*****************************************!*\
+  !*** external "react-bootstrap/Navbar" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-bootstrap/Navbar");
+
+/***/ }),
+
 /***/ "react-infinite-scroll-component":
 /*!**************************************************!*\
   !*** external "react-infinite-scroll-component" ***!
@@ -455,6 +849,17 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-infinite-scroll-component");
+
+/***/ }),
+
+/***/ "react-star-ratings":
+/*!*************************************!*\
+  !*** external "react-star-ratings" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-star-ratings");
 
 /***/ })
 

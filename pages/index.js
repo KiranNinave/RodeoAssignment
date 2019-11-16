@@ -1,7 +1,19 @@
 import React from "react";
-import Link from "next/link";
 import { getPopularMoviesApi } from "../apis/movieApis";
 import InfiniteScroll from "react-infinite-scroll-component";
+
+// style
+import "bootstrap/dist/css/bootstrap.min.css";
+import "antd/dist/antd.css";
+
+// style compoents
+import { Container, Row, Col } from "react-bootstrap";
+
+// layout
+import Header from "../layouts/Header";
+
+// compoents
+import MovieCard from "../components/MovieCard";
 
 class Index extends React.Component {
   constructor(props) {
@@ -53,27 +65,30 @@ class Index extends React.Component {
   render() {
     return (
       <div>
-        <h2>home</h2>
-        <Link href="/search">
-          <a>search</a>
-        </Link>
-        <InfiniteScroll
-          dataLength={this.state.movies.length} //This is important field to render the next data
-          next={this.loadMore}
-          hasMore={this.state.hasMore}
-          loader={<h4>Loading...</h4>}
-          endMessage={
-            <p style={{ textAlign: "center" }}>
-              <b>Yay! You have seen it all</b>
-            </p>
-          }
-        >
-          {this.state.movies.map((movie, index) => (
-            <div key={movie.id.toString() + index}>
-              <h3>{movie.title}</h3>
-            </div>
-          ))}
-        </InfiniteScroll>
+        <Header></Header>
+        <Container style={{ marginTop: 70 }}>
+          <InfiniteScroll
+            dataLength={this.state.movies.length} //This is important field to render the next data
+            next={this.loadMore}
+            hasMore={this.state.hasMore}
+            loader={<h4>Loading...</h4>}
+            endMessage={
+              <p style={{ textAlign: "center" }}>
+                <b>Yay! You have seen it all</b>
+              </p>
+            }
+          >
+            <Row style={{ justifyContent: "center" }}>
+              {this.state.movies.map((movie, index) => (
+                <div key={movie.id.toString() + index}>
+                  <Col>
+                    <MovieCard movie={movie} />
+                  </Col>
+                </div>
+              ))}
+            </Row>
+          </InfiniteScroll>
+        </Container>
       </div>
     );
   }
