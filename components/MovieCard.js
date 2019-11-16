@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Link from "next/link";
 import { Card, Icon } from "antd";
 import StarRating from "react-star-ratings";
 const { Meta } = Card;

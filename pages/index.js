@@ -1,6 +1,7 @@
 import React from "react";
 import { getPopularMoviesApi } from "../apis/movieApis";
 import InfiniteScroll from "react-infinite-scroll-component";
+import Link from "next/link";
 
 // style
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -81,9 +82,11 @@ class Index extends React.Component {
             <Row style={{ justifyContent: "center" }}>
               {this.state.movies.map((movie, index) => (
                 <div key={movie.id.toString() + index}>
-                  <Col>
-                    <MovieCard movie={movie} />
-                  </Col>
+                  <Link href={`/detail?id=${movie.id}`}>
+                    <Col style={{ cursor: "pointer" }}>
+                      <MovieCard movie={movie} />
+                    </Col>
+                  </Link>
                 </div>
               ))}
             </Row>

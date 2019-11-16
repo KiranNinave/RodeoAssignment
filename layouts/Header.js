@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Nav } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import { Form, FormControl, Button, Row, Col } from "react-bootstrap";
+import Link from "next/link";
 
 export default class NavBar extends React.Component {
   constructor(props) {
@@ -24,7 +25,11 @@ export default class NavBar extends React.Component {
     return (
       <Navbar fixed="top" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="/">Movies Now</Navbar.Brand>
+          <Link href="/">
+            <div style={{ cursor: "pointer" }} className="navbar-brand">
+              Movies Now
+            </div>
+          </Link>
           <Nav className="mr-auto"></Nav>
           {search && (
             <Form inline onSubmit={this.onSubmit}>
@@ -42,9 +47,14 @@ export default class NavBar extends React.Component {
             </Form>
           )}
           {!search && (
-            <Nav.Link className="btn btn-outline-light" inline href="/search">
-              search
-            </Nav.Link>
+            <Link inline={true} href="/search">
+              <div
+                style={{ cursor: "pointer" }}
+                className="btn btn-outline-light"
+              >
+                search
+              </div>
+            </Link>
           )}
         </Container>
       </Navbar>

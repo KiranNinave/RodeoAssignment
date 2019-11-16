@@ -1,6 +1,7 @@
 import React from "react";
 import { getSearchMoviesApi } from "../apis/movieApis";
 import InfiniteScroll from "react-infinite-scroll-component";
+import Link from "next/link";
 
 // style
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -80,7 +81,12 @@ class Search extends React.Component {
     if (this.state.loading) {
       return (
         <div
-          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+          style={{
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: 100
+          }}
         >
           <Spinner animation="border" role="status">
             <span className="sr-only">Loading...</span>
@@ -114,9 +120,11 @@ class Search extends React.Component {
             <Row style={{ justifyContent: "center" }}>
               {this.state.movies.map((movie, index) => (
                 <div key={movie.id.toString() + index}>
-                  <Col>
-                    <MovieCard movie={movie} />
-                  </Col>
+                  <Link href={`/detail?id=${movie.id}`}>
+                    <Col style={{ cursor: "pointer" }}>
+                      <MovieCard movie={movie} />
+                    </Col>
+                  </Link>
                 </div>
               ))}
             </Row>

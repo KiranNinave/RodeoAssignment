@@ -22,3 +22,14 @@ export const getPopularMoviesApi = async (data = { page: 1 }) => {
     throw new Error(err);
   }
 };
+
+export const getMovieById = async (data = { id: 1 }) => {
+  try {
+    const url = `https://api.themoviedb.org/3/movie/${data.id}?api_key=b3ecc1e3006dbf3261279644491be766&language=en-US`;
+    console.log(url);
+    const response = await sendJsonRequest(url, httpMethods.GET);
+    return await sendResponse(response);
+  } catch (err) {
+    throw new Error(err);
+  }
+};
